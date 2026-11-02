@@ -1,0 +1,30 @@
+# scope.txt · programa: Klarna (HackerOne) · https://hackerone.com/klarna · consultado: 2026-11-01
+# política vigente: versión del 15 de septiembre de 2026
+
+# dentro de alcance (comodines del programa):
+*.klarna.com
+*.klarna.net
+*.klarnacdn.net
+*.pricerunner.com
+
+# dominios raíz (decisión propia, explicada en alcance.md):
+# el comodín solo cubre subdominios; se añaden para poder hacer whois y dig del dominio,
+# que es justo la comprobación que pide la propia política
+klarna.com
+klarna.net
+klarnacdn.net
+pricerunner.com
+
+# fuera de alcance (no se toca):
+!locker.klarna.com
+!jobs.pricerunner.com
+!nuji.com
+
+# exclusiones que este fichero no puede expresar (se respetan a mano):
+# - rutas concretas dentro de hosts permitidos:
+#     https://app.klarna.com/us/api/connected_card_bff/
+#     https://api.pricerunner.com/swagger-ui.html
+#     https://api-us.pricerunner.com/swagger-ui.html
+#     https://api-stage.pricerunner.com/swagger-ui.html
+# - todo lo relacionado con Kustom
+# - subdominios de los comodines operados por terceros (comprobar whois + dig de cada uno)
