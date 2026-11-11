@@ -129,7 +129,6 @@ No caben 9.731 filas, así que la tabla recoge los más representativos: los pri
   - Entre 1.001 y 5.000 empleados, con sede en Estocolmo.
   - Por departamento, IT e ingeniería es claramente el mayor (389 de los correos identificados), seguido de dirección (125), ventas (122) y datos (75): un tercio de la plantilla visible es técnica. *(18:16)*
 
-Siguiendo las reglas del proyecto y del programa, aquí no aparecen nombres ni correos de personas concretas.
 
 ## 5. Puntos de interés
 
@@ -139,7 +138,7 @@ Estos son los tres elementos que investigaría primero en la fase activa.
 `vpn.pricerunner.com` y `pocvpn.pricerunner.com` comparten IP (EC2, Irlanda) y Google los indexa como un portal **SSL-VPN de Fortinet** ("Launch FortiClient", token y SSO). Además, `ftp.pricerunner.com` expone un servidor **ProFTPD** en EC2 Fráncfort. Son las puertas de entrada remota de la filial, que tiene una infraestructura menos homogénea que la de Klarna. Los SSL-VPN de Fortinet han tenido vulnerabilidades críticas muy explotadas, el prefijo "poc" sugiere una prueba de concepto que se quedó publicada y el FTP es un protocolo heredado. En la fase activa tocaría confirmar versiones y configuración, siempre dentro de las reglas del programa. *(11:05, 17:38, 17:58)*
 
 **2. Posibles registros DNS colgantes hacia Freshdesk**
-Tres subdominios de `*.klarna.net` tienen un CNAME que apunta a Freshdesk pero no resuelve. Es el patrón típico del *subdomain takeover*: si el portal se dio de baja en Freshdesk, otra persona podría reclamarlo y servir contenido bajo un dominio de Klarna. El servicio de Freshdesk está fuera de alcance, pero **el registro DNS es de Klarna**, y el programa paga expresamente estos hallazgos (150 $). Los nombres exactos no se publican aquí porque la política pide no difundir vulnerabilidades sin confirmar fuera del programa; se han comunicado al profesor. *(11:33)*
+Tres subdominios de `*.klarna.net` tienen un CNAME que apunta a Freshdesk pero no resuelve. Es el patrón típico del *subdomain takeover*: si el portal se dio de baja en Freshdesk, otra persona podría reclamarlo y servir contenido bajo un dominio de Klarna. El servicio de Freshdesk está fuera de alcance, pero **el registro DNS es de Klarna**, y el programa paga expresamente estos hallazgos (150 $). *(11:33)*
 
 **3. Entornos no productivos accesibles desde Internet**
 `app-api-staging.klarna.com`, `api-stage.pricerunner.com`, `branch.nonprod.pricerunner.com` y `www.nonprod.pricerunner.com` resuelven a IP públicas, y la nomenclatura muestra cientos de nombres `playground`, `nonprod` y `e2e`. Los entornos de pruebas suelen tener controles más débiles, datos de prueba y funciones a medio terminar, y sirven para entender cómo funcionan las APIs de producción. La política avisa de que estos hallazgos pueden pagarse menos, pero siguen siendo una vía de entrada habitual. *(10:57, 11:05, 11:10)*

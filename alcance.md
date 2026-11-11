@@ -48,7 +48,7 @@ El enunciado pide revisar cuatro cosas concretas. Esto es lo que dice la políti
 
 **¿Prohíbe contactar con empleados?** Sí. La ingeniería social (phishing y similares) contra empleados, clientes o contratistas está prohibida. En este proyecto no contacto con nadie: LinkedIn y Hunter.io los consulto solo en modo lectura, para entender la organización y el patrón de correo.
 
-**¿Hay algún requisito de identificación?** Sí, y es importante. Toda la actividad tiene que poder atribuirse a un investigador, así que cada petición debe llevar la cabecera `X-Bug-Bounty: h1-lbaeutr`. También pide usar el alias `<handle>@wearehackerone.com` para cualquier registro o formulario. Como en este proyecto no se crean cuentas ni se rellenan formularios, lo que me afecta es la cabecera: la llevarán tanto mis peticiones con `curl` como las herramientas del agente.
+**¿Hay algún requisito de identificación?** Sí, y es importante. Toda la actividad tiene que poder atribuirse a un investigador, así que cada petición debe llevar la cabecera `X-Bug-Bounty: h1-lbaeutr`. También pide usar el alias `lbaeutr@wearehackerone.com` para cualquier registro o formulario. Como en este proyecto no se crean cuentas ni se rellenan formularios, lo que me afecta es la cabecera: la llevarán tanto mis peticiones con `curl` como las herramientas del agente.
 
 Hay otras reglas del programa que también tengo en cuenta:
 
